@@ -1,0 +1,94 @@
+$colorFondo: white;
+$colorFondoSec: rgb(158, 154, 154);
+$colorFondoTer: lightblue;
+$colorTexto: red;
+$colorTextSec: blue;
+$fontSizeBase: 10px;
+
+//Declaracion de mixin
+@mixin setFlex ($flexDir, $alig){
+    display: flex;
+    flex-direction: $flexDir; //row;
+    flex-wrap: wrap;
+    justify-content: $alig; //space-around;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{
+    font-size: $fontSizeBase;
+}
+
+.encabezado{
+    background-color: $colorFondoTer;
+
+    h1{
+        color: $colorTexto;
+        font-size: $fontSizeBase * 2;        
+    }
+}
+
+.mainMenu{
+    background-color: $colorFondoSec;
+
+    ul{
+        //Incluyendo el mixin setFlex
+        @include setFlex(row, space-around);
+
+        a{
+            color: $colorTexto;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.sectionMain{
+    display: grid;
+
+    grid-template-areas: "titulo        menuSeccion"
+                          "descripcion  imagenDetalle"
+                          "menuDetalle  menuDetalle";
+
+    .titDet{
+        grid-area: titulo;
+    }
+
+    .subMenu{
+        grid-area: menuSeccion;
+        @include setFlex(row, space-around);
+
+        li{
+            padding: 1rem;
+
+            a{
+                color: $colorTexto;
+                //Definiendo estilos con pseudo clases usando la identacion.
+                &:hover{
+                    color: $colorTextSec;
+                }
+            }
+            
+        }
+    }
+
+    .dsp{
+        grid-area: dsp;
+    }
+
+    .imagenDsp{
+        grid-area: imagenDetalle;
+    }
+
+    .menuDet{
+        grid-area: menuDetalle;
+        @include setFlex(column, center)
+    }
+}
+
+

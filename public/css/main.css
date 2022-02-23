@@ -1,0 +1,114 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  font-size: 10px;
+}
+
+.encabezado {
+  background-color: lightblue;
+}
+
+.encabezado h1 {
+  color: red;
+  font-size: 20px;
+}
+
+.mainMenu {
+  background-color: #9e9a9a;
+}
+
+.mainMenu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.mainMenu ul a {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.sectionMain {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "titulo        menuSeccion" "descripcion  imagenDetalle" "menuDetalle  menuDetalle";
+}
+
+.sectionMain .titDet {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: titulo;
+}
+
+.sectionMain .subMenu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: menuSeccion;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.sectionMain .subMenu li {
+  padding: 1rem;
+}
+
+.sectionMain .subMenu li a {
+  color: red;
+}
+
+.sectionMain .subMenu li a:hover {
+  color: blue;
+}
+
+.sectionMain .dsp {
+  grid-area: dsp;
+}
+
+.sectionMain .imagenDsp {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: imagenDetalle;
+}
+
+.sectionMain .menuDet {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: menuDetalle;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
